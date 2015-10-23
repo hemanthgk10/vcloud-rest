@@ -4,7 +4,7 @@ DESCRIPTION
 --
 This is the forked version of the vcloud-rest from https://github.com/vmware/vcloud-rest. It's forked to add more functionality for the Rest API's. 
 
-Example:
+Few Changes like -
  1. Ability to create a stand alone vApp Network 
  2. Ability to create vApp Network with DHCP enabled.
  3. Ability to compose entire vApp in one pass instead of adding VM to vApp one by one.
