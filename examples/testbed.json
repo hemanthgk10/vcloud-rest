@@ -1,0 +1,141 @@
+{
+  "hosts": {
+    "server1": {
+      "additional_disks": [
+        {
+          "disk_size": 10000
+        }
+      ],
+      "cores": 4,
+      "enable_nested_hypervisor": 1,
+      "guest_customization": {
+        "enabled": 0
+      },
+      "memory": 24576,
+      "name": "server1",
+      "network_connection": [
+        {
+          "ip_allocation_mode": "DHCP",
+          "network": "Test 2 Promiscuous",
+          "network_connection_index": 0,
+          "nic_type": "e1000"
+        },
+        {
+          "ip_allocation_mode": "POOL",
+          "network": "internal_network",
+          "network_connection_index": 1,
+          "nic_type": "e1000"
+        },
+        {
+          "ip_allocation_mode": "DHCP",
+          "network": "Test 2 Promiscuous",
+          "network_connection_index": 2,
+          "nic_type": "e1000"
+        },
+        {
+          "ip_allocation_mode": "DHCP",
+          "network": "Test 2 Promiscuous",
+          "network_connection_index": 3,
+          "nic_type": "e1000"
+        }
+      ],
+      "password": "vmware",
+      "template_catalog": "test",
+      "template_name": "esx_server",
+      "upgrade_hardware_version": 1,
+      "username": "root",
+      "template_id": "8de68842-95f4-4b64-8a57-713dec97db0f"
+    },
+    "server2": {
+      "additional_disks": [
+        {
+          "disk_size": 10000
+        }
+      ],
+      "cores": 4,
+      "enable_nested_hypervisor": 1,
+      "guest_customization": {
+        "enabled": 0
+      },
+      "memory": 24576,
+      "name": "server2",
+      "network_connection": [
+        {
+          "ip_allocation_mode": "DHCP",
+          "network": "Test 2 Promiscuous",
+          "is_connected": "false",
+          "network_connection_index": 0,
+          "nic_type": "e1000"
+        },
+        {
+          "ip_allocation_mode": "POOL",
+          "network": "internal_network",
+          "network_connection_index": 1,
+          "nic_type": "e1000"
+        },
+        {
+          "ip_allocation_mode": "DHCP",
+          "network": "Test 2 Promiscuous",
+          "network_connection_index": 2,
+          "nic_type": "e1000"
+        },
+        {
+          "ip_allocation_mode": "DHCP",
+          "network": "Test 2 Promiscuous",
+          "is_connected": "false",
+          "network_connection_index": 3,
+          "nic_type": "e1000"
+        }
+      ],
+      "password": "vmware",
+      "template_catalog": "test",
+      "template_name": "esx_server",
+      "upgrade_hardware_version": 1,
+      "username": "root",
+      "template_id": "8de68842-95f4-4b64-8a57-713dec97db0f"
+    }
+  },
+  "lease": 86400,
+  "name": "test_vapp_spec",
+  "network_config": [
+    {
+      "default_lease_time": "3600",
+      "dhcp_end_address": "192.168.0.200",
+      "dhcp_start_address": "192.168.0.101",
+      "dns1": "10.10.10.10",
+      "dns2": "10.10.10.101",
+      "dns_suffix": "testdns.example.local",
+      "enable_dhcp": "false",
+      "fence_mode": "isolated",
+      "gateway": "192.168.0.253",
+      "ip_ranges": [
+        {
+          "end_address": "192.168.0.100",
+          "start_address": "192.168.0.1"
+        }
+      ],
+      "max_lease_time": "7200",
+      "name": "internal_network",
+      "netmask": "255.255.255.0",
+      "vapp_network_name": "internal_network"
+    },
+    {
+      "org_network_name": "Test 2 Promiscuous",
+      "id": "b4478cd5-5fa3-47ad-8991-3a885dae9e16",
+      "name": "Test 2 Promiscuous",
+      "description": "",
+      "gateway": "10.10.10.253",
+      "netmask": "255.255.155.0",
+      "fence_mode": "bridged",
+      "ip_ranges": [
+        {
+          "start_address": "10.10.10.100",
+          "end_address": "10.10.10.200"
+        }
+      ],
+      "parent_network": "b4478cd5-5fa3-47ad-8991-3a885dae9e16"
+    }
+  ],
+  "owner": "test",
+  "vdc": "97486123-4669-4e7d-98d8-b14e2128b74b"
+}

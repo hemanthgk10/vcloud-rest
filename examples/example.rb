@@ -113,6 +113,13 @@ connection.wait_task_completion(task_id)
 newvapp = connection.get_vapp(newvapp[:id])
 ap newvapp
 
+### Compose an entire vApp with multiple VM's in one pass
+puts "### Composing a vApp with multiple VM's at one pass"
+testbedfile = File.read('testbed.json')
+vapp_spec = JSON.parse(testbedfile, :symbolize_names=>'true')
+task_id = connection.compose_vapp_from_spec(vapp_spec)
+connection.wait_task_completion(task_id)
+
 ### Here we build an array with the needed info, be aware that vm_id != vapp_scoped_local_id
 
 puts "### Building Port Forwarding NAT Rules"

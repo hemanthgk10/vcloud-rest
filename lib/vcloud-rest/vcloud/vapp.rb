@@ -309,7 +309,7 @@ module VCloudClient
                   values[:network_connection].each do |network_connection|
                     xml.NetworkConnection('network' => network_connection[:network]) {
                       xml.NetworkConnectionIndex network_connection[:network_connection_index]
-                      xml.IsConnected 'true'
+                      xml.IsConnected(network_connection[:is_connected] || 'true')
                       xml.IpAddressAllocationMode(network_connection[:ip_allocation_mode] || 'DHCP')
                     }
                   end
